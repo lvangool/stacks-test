@@ -1,3 +1,9 @@
+staging:
+   first_thing:
+     - snippet: cloud66/vic
+       target: any
+       execute: true
+       apply_during: build_only
 development:
     first_thing:
         - source: /.cloud66/test_file
