@@ -4,4 +4,4 @@ production:
         MYSQL_USERNAME: root
         MYSQL_PASSWORD: "{{MYSQL_ROOT_PASSWORD}}"
         MYSQL_DATABASE: sample_database
-        MYSQL_ADDRESS: <<tbd>>
+        MYSQL_ADDRESS: "<<tbd>>"
