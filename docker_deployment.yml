@@ -10,7 +10,7 @@ production:
       ports: ["3000:80:443"]
       volumes: ["/tmp:container/tmp_host"]
       restart_on_redeploy: true
-      requires: mysql_db
+      requires: ['mysql_db']
     mysql_db:
       image: mysql
       ports: ["3306"]
