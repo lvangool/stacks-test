@@ -9,9 +9,9 @@ production:
       log_folder: /usr/src/app/log
       ports: ["3000:80:443"]
       volumes: ["/tmp:container/tmp_host"]
-      restart_on_redeploy: true
+      restart_on_deploy: true
       requires: ['mysql_db']
     mysql_db:
       image: mysql
       ports: ["3306"]
-      restart_on_redeploy: false
+      restart_on_deploy: false
