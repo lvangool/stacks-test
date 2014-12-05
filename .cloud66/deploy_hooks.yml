@@ -1,5 +1,5 @@
 production:
   first_thing:
-    - source: .cloud66/my.conf
-      destination: /etc/mysql/my.conf
+    - source: .cloud66/my.cnf
+      destination: /etc/mysql/my.cnf
       target: docker
