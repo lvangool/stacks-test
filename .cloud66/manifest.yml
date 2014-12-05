@@ -1,0 +1,3 @@
+production:
+    environment_variables:
+        REDIS_ADDRESS: '25.0.0.2'
