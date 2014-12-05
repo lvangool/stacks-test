@@ -6,4 +6,9 @@
 New! Newer! Newest! Newester!
 
 And, one more!
+<br/>
+<br/>
+<% new_value = $redis.get('value_now') || 0 %>
+VALUE from REDIS is <%= new_value %>
+<% $redis.set('value_now', new_value.to_i + 1) %>
 
