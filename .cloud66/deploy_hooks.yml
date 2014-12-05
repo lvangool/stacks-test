@@ -3,3 +3,4 @@ production:
     - source: .cloud66/my.cnf
       destination: /etc/mysql/my.cnf
       target: docker
+      apply_during: build_only
