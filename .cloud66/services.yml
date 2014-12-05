@@ -2,7 +2,7 @@ production:
   services:
     web:
       git: git://github.com/lvangool/stacks-test
-      git_branch: docker_buildgrid
+      git_branch: docker_buildgrid_redis
       command: rackup -p 3000
       build_command: rake db:migrate
       deploy_command: rake db:migrate
@@ -16,5 +16,5 @@ production:
       ports: ["6379"]
       restart_on_deploy: false
       volumes: ["/tmp:/data"]
-   databases:
+  databases:
     - "mysql"
