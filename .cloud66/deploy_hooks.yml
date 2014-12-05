@@ -1,6 +1,6 @@
 production:
   first_thing:
-    - source: .cloud66/my.cnf
+    - source: .cloud66/files/my.cnf
       destination: /etc/mysql/my.cnf
       target: docker
       apply_during: build_only
