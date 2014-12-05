@@ -15,3 +15,4 @@ production:
       image: mysql
       ports: ["3306"]
       restart_on_deploy: false
+      volumes: ["/mysql:/etc/mysql"]
