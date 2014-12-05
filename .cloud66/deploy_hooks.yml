@@ -4,3 +4,7 @@ production:
       destination: /etc/mysql/my.cnf
       target: docker
       apply_during: build_only
+    - command: sudo mkdir -p /var/lib/mysql
+      target: docker
+      apply_during: build_only
+    
