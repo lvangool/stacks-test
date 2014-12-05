@@ -10,9 +10,11 @@ production:
       ports: ["3000:80:443"]
       volumes: ["/tmp:container/tmp_host"]
       restart_on_deploy: true
-      requires: ['mysql_db']
-    mysql_db:
-      image: mysql
-      ports: ["3306"]
+      requires: ['redis']
+    redis:
+      image: redis
+      ports: ["6379"]
       restart_on_deploy: false
-      volumes: ["/etc/mysql:/etc/mysql", "/var/lib/mysql:/var/lib/mysql"]
+      volumes: ["/tmp:/data"]
+   databases:
+    - "mysql"
