@@ -1,7 +1,0 @@
-production:
-    environment_variables:
-        MYSQL_ROOT_PASSWORD: AUTO_GENERATE_15
-        MYSQL_USERNAME: root
-        MYSQL_PASSWORD: "{{MYSQL_ROOT_PASSWORD}}"
-        MYSQL_DATABASE: sample_database
-        MYSQL_ADDRESS: "25.0.0.2"
