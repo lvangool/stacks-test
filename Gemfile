@@ -34,6 +34,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'thin'
+
 gem 'redis'
 
 # Use ActiveModel has_secure_password
