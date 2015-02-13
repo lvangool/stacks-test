@@ -1,36 +1,18 @@
-source 'http://rubygems.org'
+# What have they done to the Gemfile???
+#
+# Relax. Breathe deep. All the gems are still there; they're just loaded in various files in Gemfile.d/
+# This allows us to require gems locally that we might not want to commit to our public repo. We can maintain
+# a customized list of gems for development and debuggery, without affecting our ability to merge with canvas-lms
+#
+# NOTE: this file has to use 1.8.7 hash syntax to not raise a parser exception on 1.8.7
+#
+# NOTE: some files in Gemfile.d/ will have certain required gems indented. While this may seem arbitrary,
+# it actually has semantic significance. An indented gem required in Gemfile is a gem that is NOT
+# directly used by Canvas, but required by a gem that is used by Canvas. We lock into specific versions of
+# these gems to prevent regression, and the indentation serves to alert us to the relationship between the gem and canvas-lms
+source 'https://rubygems.org/'
 
-gem 'rails', '3.0.3'
+require File.expand_path("../config/canvas_rails4", __FILE__)
 
-#ruby '2.1.1'
-
-group :production do 	
-	gem 'memcache-client'
-	gem 'resque'
-end
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+Dir.glob(File.join(File.dirname(__FILE__), 'Gemfile.d', '*.rb')).sort.each do |file|
+ eval File.read(file), binding, file
