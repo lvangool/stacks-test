@@ -5,6 +5,7 @@ default: &default
       sudo: true
       execute: true
       apply_during: build_only
+      run_on: all_servers
     - command: npm install -g npm
       target: rails
       sudo: true
