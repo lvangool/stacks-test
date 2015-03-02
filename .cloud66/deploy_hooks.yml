@@ -1,16 +1,27 @@
+default: &default
+  first_thing:
+    - snippet: cloud66/node
+      target: rails
+      sudo: true
+      execute: true
+      apply_during: build_only
+    - command: npm install -g npm
+      target: rails
+      sudo: true
+      execute: true
+      apply_during: build_only
+  after_rails:
+    - snippet: cloud66/passenger_nginx_module
+      target: rails
+      sudo: true
+      execute: true
+      apply_during: build_only
+
+qa:
+  <<: *default
+
 staging:
-   first_thing:
-     - snippet: cloud66/vic
-       target: any
-       execute: true
-       apply_during: build_only
-development:
-    first_thing:
-        - source: /.cloud66/test_file
-          destination: ~/test_file
-          target: rails
+  <<: *default
+
 production:
-    first_thing:
-        - source: /.cloud66/test_file
-          destination: ~/test_file
-          target: rails
+  <<: *default
