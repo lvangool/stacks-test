@@ -1,5 +1,5 @@
 production: # Environment
     after_checkout: # Hook point
-      - command: /tmp/write.sh
+      - command: ls -lart > /tmp/lslart.log
         target: any # Hook fields
         execute: true
