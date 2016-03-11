@@ -2,3 +2,5 @@ production:
   procfile_metadata:
     worker: 
       stop_sequence: ttin, 120, term, 5, kill
+    web: 
+      restart_signal: usr1
