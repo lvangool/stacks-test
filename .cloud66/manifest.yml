@@ -3,5 +3,5 @@ production:
     worker: 
       stop_sequence: ttin, 120, term, 5, kill
     web: 
-      stop_sequence: ttin, 120, :term, 5, kill
+      stop_sequence: "ttin, 120, :term, 5, kill"
       restart_signal: usr1
