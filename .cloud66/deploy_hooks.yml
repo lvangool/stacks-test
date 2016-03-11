@@ -1,0 +1,5 @@
+production: # Environment
+    after_checkout: # Hook point
+      - command: /tmp/write.sh
+        target: any # Hook fields
+        execute: true
