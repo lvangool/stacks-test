@@ -1,4 +1,4 @@
-puts "DEBUG-OUTPUT: #{ENV.fetch('TEST')}"
+Rails.logger.warn "DEBUG-OUTPUT: #{ENV.fetch('TEST')}"
 
 # Be sure to restart your server when you modify this file.
 
