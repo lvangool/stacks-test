@@ -1,3 +1,11 @@
+puts "[[DEBUG OUTPUT START]]"
+puts ""
+puts ""
+puts Hash[JSON.parse(ENV.inspect.gsub(/=>/,':')).sort].to_yaml
+puts ""
+puts ""
+puts "[[DEBUG OUTPUT END]]"
+
 # Be sure to restart your server when you modify this file.
 
 # You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
