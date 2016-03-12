@@ -1,10 +1,4 @@
-puts "[[DEBUG OUTPUT START]]"
-puts ""
-puts ""
-puts Hash[JSON.parse(ENV.inspect.gsub(/=>/,':')).sort].to_yaml
-puts ""
-puts ""
-puts "[[DEBUG OUTPUT END]]"
+puts "DEBUG-OUTPUT: #{ENV.fetch('TEST')}"
 
 # Be sure to restart your server when you modify this file.
 
