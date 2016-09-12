@@ -8,9 +8,9 @@ development:
     first_thing:
         - source: /.cloud66/test_file
           destination: ~/test_file
-          target: rails
+          target: node
 production:
     first_thing:
         - source: /.cloud66/test_file
           destination: ~/test_file
-          target: rails
+          target: node
