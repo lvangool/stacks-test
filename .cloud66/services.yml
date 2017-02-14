@@ -2,7 +2,7 @@ production:
   services:
     web:
       git: git://github.com/lvangool/stacks-test
-      git_branch: docker_buildgrid_redis
+      git_branch: kubes_simple_web
       command: rackup -p 3000
       build_command: rake db:migrate
       deploy_command: rake db:migrate
@@ -10,11 +10,5 @@ production:
       ports: ["3000:80:443"]
       volumes: ["/tmp:container/tmp_host"]
       restart_on_deploy: true
-      requires: ['redis']
-    redis:
-      image: redis
-      ports: ["6379"]
-      restart_on_deploy: false
-      volumes: ["/tmp:/data"]
   databases:
     - "mysql"
