@@ -1,8 +1,8 @@
 production:
   procfile_metadata:
-    worker: 
+    scheduler: 
       stop_sequence: ttin, 120, term, 5, kill
-    web: 
+    worker: 
       stop_sequence: "ttin, 120, :term, 5, kill"
       restart_signal: usr2
       restart_on_deploy: false
