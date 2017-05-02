@@ -2,6 +2,7 @@ production:
   procfile_metadata:
     scheduler: 
       stop_sequence: ttin, 120, term, 5, kill
+      restart_on_deploy: false
     worker: 
       stop_sequence: "ttin, 120, :term, 5, kill"
       restart_signal: usr2
