@@ -1,14 +1,4 @@
-development:
-    rails:
-        configuration:
-            reserved_server_memory: 100
-            passenger_process_memory: 150
-            perfect_forward_secrecy: true
-production:
-    rails:
-        configuration:
-            reserved_server_memory: 100
-            passenger_process_memory: 15
-            perfect_forward_secrecy: true
-            passenger_version: 4.0.18
-            nginx_cors: true
+rails:
+  configuration:
+    nginx:
+      extra_build_arguments: "--add-module=/usr/local/build/nginx-modules/headers-more-nginx-module"
