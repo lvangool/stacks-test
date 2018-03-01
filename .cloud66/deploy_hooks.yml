@@ -7,3 +7,4 @@ first_thing:
    env_vars:
      SOURCE_URL: "https://github.com/openresty/headers-more-nginx-module/archive/v0.33.tar.gz"
      TARGET_PATH: /usr/local/build/nginx-modules/headers-more-nginx-module
+     UNTAR: true
