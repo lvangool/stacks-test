@@ -1,16 +1,9 @@
-staging:
-   first_thing:
-     - snippet: cloud66/vic
-       target: any
-       execute: true
-       apply_during: build_only
-development:
-    first_thing:
-        - source: /.cloud66/test_file
-          destination: ~/test_file
-          target: rails
-production:
-    first_thing:
-        - source: /.cloud66/test_file
-          destination: ~/test_file
-          target: rails
+first_thing:
+   snippet: cloud66/download_source
+   target: rails
+   execute: true
+   apply_during: build_only
+   run_on: all_servers
+   env_vars:
+     SOURCE_URL: "https://github.com/openresty/headers-more-nginx-module/archive/v0.33.tar.gz"
+     TARGET_PATH: /usr/local/build/nginx-modules/headers-more-nginx-module
