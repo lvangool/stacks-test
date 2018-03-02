@@ -1,5 +1,5 @@
 before_nginx:
-   snippet: cloud66/download_source
+   snippet: cloud66/download
    target: rails
    execute: true
    apply_during: build_only
